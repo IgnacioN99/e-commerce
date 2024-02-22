@@ -1,0 +1,65 @@
+{
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts", ".tsx"]
+      }
+    }
+  },
+  "root": true,
+  "env": {
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": ["./tsconfig.json"],
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "sonarjs", "prettier", "react"],
+  "extends": [
+    "plugin:sonarjs/recommended",
+    "eslint:recommended"
+  ],
+  "rules": {
+    "putout/putout": "off",
+    "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 1 }],
+    "no-duplicate-imports": "error",
+    "object-curly-newline": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "no-trailing-spaces": "error",
+    "eol-last": ["error", "always"],
+    "max-len": ["error", { "code": 180, "ignoreStrings": true }],
+    "no-new": "error",
+    "no-undef": "off",
+    "no-console": "error",
+    "import/prefer-default-export": "off",
+    "import/no-named-as-default": "off",
+    "@typescript-eslint/prefer-readonly-parameter-types": "off",
+    "etc/prefer-interface": "off",
+    "@typescript-eslint/consistent-type-definitions": "off",
+    "react/require-default-props": "off",
+    "react/jsx-props-no-spreading": "off",
+    "guard-for-in": "off",
+    "no-unused-vars":"off",
+    "react/jsx-filename-extension": [1, { "extensions": [".ts", ".scss", ".tsx", ".json"] }],
+    "react/prefer-stateless-function": [2, { "ignorePureComponents": true }],
+    "react/function-component-definition": [
+      "off",
+      {
+        "namedComponents": "arrow-function"
+      }
+    ],
+    "@typescript-eslint/naming-convention": [
+      "warn",
+      {
+        "selector": "function",
+        "format": ["PascalCase", "camelCase"]
+      }
+    ],
+    "func-style": ["error", "declaration", { "allowArrowFunctions": true }],
+    "import/no-unused-modules": "off",
+    "react/forbid-component-props": "off",
+    "testing-library/prefer-user-event": "off"
+  }
+}
