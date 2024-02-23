@@ -25,10 +25,8 @@ const Sider = (props: SiderProps) => {
   };
 
   return (
-    <Layout.Sider trigger={null} collapsible collapsed={props.collapsed}>
-      <Menu theme="dark" mode="inline">
-        {generateMenuItems(sideBarItems)}
-      </Menu>
+    <Layout.Sider trigger={null} collapsible collapsed={props.collapsed} theme="light" collapsedWidth={0}>
+      <Menu mode="inline">{generateMenuItems(sideBarItems)}</Menu>
     </Layout.Sider>
   );
 };

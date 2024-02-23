@@ -1,10 +1,11 @@
-import { TitleProps } from '@components/Typography/types';
-import { Typography } from 'antd';
-
+import { Title } from "@components/Typography/styles";
+import { TitleProps } from "@components/Typography/types";
 
 const H1 = ({ children, ...rest }: TitleProps): JSX.Element => {
   return (
-    <Typography.Title level={1} {...rest}>{children}</Typography.Title>
-  )
-}
-export default H1
+    <Title level={1} {...rest}>
+      {children}
+    </Title>
+  );
+};
+export default H1;

@@ -1,29 +1,20 @@
-import {ButtonBase} from "@components/Button";
-import Layout from "@components/Layout";
-import {MenuFoldOutlined, MenuUnfoldOutlined} from "@config/Icons";
-import useTheme from "@hooks/useTheme";
-import {HeaderProps} from "./types";
+import Typography from "@components/Typography";
+import { StyledHeader, StyledMenu, StyledMenuIcon } from "./styles";
+import { HeaderProps } from "./types";
+import { ShoppingCartOutlined } from "@ant-design/icons";
 
-const Header = (props: HeaderProps) => {
-  const {colorBgContainer} = useTheme();
+const Header = ({ toggle }: HeaderProps) => {
   return (
-    <Layout.Header style={{padding: 0}}>
-      <ButtonBase // TODO change this to our button
-        type="text"
-        icon={
-          props.collapsed ? (
-            <MenuUnfoldOutlined style={{color: colorBgContainer}} />
-          ) : (
-            <MenuFoldOutlined style={{color: colorBgContainer}} />
-          )
-        }
-        onClick={() => props.toggle()}
-        style={{
-          width: 64,
-          height: 64,
-        }}
-      />
-    </Layout.Header>
+    <StyledHeader>
+      <StyledMenuIcon onClick={() => toggle()} />
+      <Typography.H2>Name</Typography.H2>
+      <StyledMenu>
+        <Typography.Body>Shorts</Typography.Body>
+        <Typography.Body>T-Shirts</Typography.Body>
+        <Typography.Body>Kits</Typography.Body>
+      </StyledMenu>
+      <ShoppingCartOutlined height={84} width={84} />
+    </StyledHeader>
   );
 };
 

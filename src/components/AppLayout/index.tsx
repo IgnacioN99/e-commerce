@@ -1,13 +1,12 @@
 import Layout from "@components/Layout";
 
-import { useState } from "react";
 import Content from "./components/Content";
 import Header from "./components/Header";
-import Sider from "./components/Sider";
-import { LayoutStyled } from "./styles";
+import { LayoutStyled, StyledSider } from "./styles";
+import { useState } from "react";
 
 const AppLayout = () => {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
 
   const toggle = () => {
     setCollapsed(!collapsed);
@@ -15,9 +14,9 @@ const AppLayout = () => {
 
   return (
     <LayoutStyled>
-      <Sider collapsed={collapsed} />
+      <StyledSider collapsed={collapsed} />
       <Layout>
-        <Header collapsed={collapsed} toggle={toggle} />
+        <Header toggle={toggle} />
         <Content />
       </Layout>
     </LayoutStyled>
