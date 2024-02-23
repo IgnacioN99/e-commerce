@@ -1,4 +1,3 @@
-export interface HeaderProps {
-  collapsed: boolean;
+export type HeaderProps = {
   toggle: () => void;
-}
+};
